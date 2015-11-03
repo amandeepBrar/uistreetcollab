@@ -27,17 +27,27 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 
                 if let JSON = response.result.value {
                     self.magazines  = JSON["magazines"] as! NSArray
-                    self.collectionView.reloadData()
                     
-                    for magazine in self.magazines {
-                        let imageurl = magazine.objectForKey("image") as! String
-                        let imageData = NSData.init(contentsOfURL: NSURL.init(string: imageurl)!)
-                        let imageMag = UIImage.init(data: imageData!)
-                        self.imageData.addObject(imageMag!)
-                    }
+                    self.collectionView.reloadData()
+
+
+                    
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
+                        for magazine in self.magazines {
+                            let imageurl = magazine.objectForKey("image") as! String
+                            let imageData = NSData.init(contentsOfURL: NSURL.init(string: imageurl)!)
+                            let imageMag = UIImage.init(data: imageData!)
+                            self.imageData.addObject(imageMag!)
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self.collectionView.reloadData()
+                            }
+                        }
+                    })
                     
                     self.activityIndicator.stopAnimating()
-                }
+                    
+                    
+            }
         }
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -62,8 +72,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.backgroundColor = UIColor.blackColor()
         let imageView:UIImageView = UIImageView.init(frame: CGRectMake(0, 0, cell.frame.width, cell.frame.height))
 
-        
-        imageView.image = self.imageData[indexPath.row] as? UIImage
+        if self.imageData.count > indexPath.row{
+            
+            imageView.image = self.imageData[indexPath.row] as? UIImage
+            
+        } else {
+            imageView.image = UIImage.init(named: "01.png")
+        }
         cell.addSubview(imageView)
         return cell
         
@@ -75,7 +90,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             dest.link = link.objectForKey("url") as! String
         }
         
-        //segue.destinationViewController.link = link.objectForKey("url")
     }
 
 }

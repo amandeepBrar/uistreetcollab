@@ -15,8 +15,9 @@
 		19967CDA1BBDE8D600E87A28 /* uistreet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19967CD81BBDE8D600E87A28 /* uistreet.xcdatamodeld */; };
 		19967CDC1BBDE8D600E87A28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19967CDB1BBDE8D600E87A28 /* Assets.xcassets */; };
 		19967CDF1BBDE8D600E87A28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19967CDD1BBDE8D600E87A28 /* LaunchScreen.storyboard */; };
-		19967CE71BBDE9D100E87A28 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 19967CE61BBDE9D100E87A28 /* Logo.png */; settings = {ASSET_TAGS = (); }; };
-		19967CEB1BBE02F600E87A28 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19967CEA1BBE02F600E87A28 /* WebViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		19967CE71BBDE9D100E87A28 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 19967CE61BBDE9D100E87A28 /* Logo.png */; };
+		19967CEB1BBE02F600E87A28 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19967CEA1BBE02F600E87A28 /* WebViewController.swift */; };
+		19DFD31C1BE042990003C51A /* ajax-loader.gif in Resources */ = {isa = PBXBuildFile; fileRef = 19DFD31B1BE042990003C51A /* ajax-loader.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		19967CE01BBDE8D600E87A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19967CE61BBDE9D100E87A28 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		19967CEA1BBE02F600E87A28 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		19DFD31B1BE042990003C51A /* ajax-loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ajax-loader.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				19967CD51BBDE8D600E87A28 /* Main.storyboard */,
 				19967CEA1BBE02F600E87A28 /* WebViewController.swift */,
 				19967CDB1BBDE8D600E87A28 /* Assets.xcassets */,
+				19DFD31B1BE042990003C51A /* ajax-loader.gif */,
 				19967CE61BBDE9D100E87A28 /* Logo.png */,
 				19967CDD1BBDE8D600E87A28 /* LaunchScreen.storyboard */,
 				19967CE01BBDE8D600E87A28 /* Info.plist */,
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19967CE71BBDE9D100E87A28 /* Logo.png in Resources */,
+				19DFD31C1BE042990003C51A /* ajax-loader.gif in Resources */,
 				19967CDF1BBDE8D600E87A28 /* LaunchScreen.storyboard in Resources */,
 				19967CDC1BBDE8D600E87A28 /* Assets.xcassets in Resources */,
 				19967CD71BBDE8D600E87A28 /* Main.storyboard in Resources */,
